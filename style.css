@@ -1,0 +1,810 @@
+/* ================================ Google Font ======================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Mulish:wght@400;600;700;800&display=swap');
+
+
+/* =============================== Variable of CSS ===================================== */
+
+:root {
+    /* ============= Variable for Color =============== */
+    --primary-color: #FF5400;
+    --title-color: #131318;
+    --text-color: #131318B2;
+    /* RGB Color for Text-color : rgba(19, 19, 24, 0.7) */
+    --body-color: #FFFFFF;
+
+
+    /* ============= Font & Typography =============== */
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+
+    /* ============ Font Weight ================ */
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+    --font-extra-bold: 800;
+
+    /* ============ Responsive Font-Size ============== */
+    @media screen and (max-width: 991px) {
+        --biggest-font-size: 3rem;
+        --h1-font-size: 2rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+    }
+
+    @media screen and (max-width: 690px) {
+        --biggest-font-size: 2.5rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: .98rem;
+    }
+
+    @media screen and (max-width: 420px) {
+        --biggest-font-size: 2rem;
+        --h1-font-size: 1.25rem;
+        --h2-font-size: 1.15rem;
+        --h3-font-size: .95rem;
+        --normal-font-size: .90rem;
+    }
+
+
+}
+
+/* ============================ Base of CSS ============================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+
+/* ========================= Reusable CSS Classes ============================= */
+.container {
+    margin-inline: 8.5rem;
+}
+
+.section {
+    margin-top: 6.25rem;
+}
+
+.section__title {
+    color: var(--title-color);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-extra-bold);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.section__description {
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+    line-height: 26px;
+    text-align: center;
+    width: 643px;
+    margin: 0 auto 48px;
+}
+
+/* ============================= Header Section ==================================== */
+.header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav__logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.nav__logo {
+    font-size: 36px;
+    font-weight: var(--font-extra-bold);
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.nav__logo span {
+    color: var(--primary-color);
+}
+
+.nav__list {
+    display: inline-flex;
+    column-gap: 50px;
+}
+
+.nav__link {
+    color: #424247;
+    font-size: 18px;
+    font-weight: var(--font-regular);
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: color .5s ease-in;
+}
+
+.active {
+    color: var(--primary-color);
+    font-weight: var(--font-bold);
+}
+
+.nav__link:hover {
+    color: var(--primary-color);
+}
+
+#nav-check {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav__toggler {
+    width: 40px;
+    height: 40px;
+    /* background-color: var(--primary-color);
+    border-radius: 5px; */
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__toggler span {
+    display: block;
+    height: 2px;
+    width: 20px;
+    background-color: var(--text-color);
+    position: relative;
+}
+
+.nav__toggler span::before,
+.nav__toggler span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--text-color);
+    left: 0;
+}
+
+.nav__toggler span::before {
+    top: -6px;
+}
+
+.nav__toggler span::after {
+    top: 6px;
+}
+
+/* ============================= Banner Section ========================================== */
+
+
+.banner__container {
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(19, 19, 24, 0.80) 0%, rgba(19, 19, 24, 0.00) 100%), url('../image/bannerBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.banner__title {
+    color: var(--body-color);
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-extra-bold);
+    margin-bottom: 24px;
+}
+
+.banner__description {
+    width: 676px;
+    margin: 0 auto 70px;
+    color: var(--body-color);
+    font-size: var(--normal-font-size);
+}
+
+.banner__form {
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.30);
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.banner__form input,
+.banner__form select,
+.banner__form button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    background: #FFF;
+    border: transparent;
+    outline: none;
+    color: rgba(19, 19, 24, 0.50);
+    font-size: 16px;
+    font-weight: var(--font-regular);
+}
+
+
+.banner__form select option {
+    padding: 15px 12px;
+    color: var(--title-color);
+}
+
+.banner__form .search__btn {
+    background-color: var(--primary-color);
+    color: var(--body-color);
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-bold);
+}
+
+/* ============================= Popular Section ========================================== */
+.popular__container {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 50px;
+}
+
+
+.popular__data {
+    flex-basis: 45%;
+}
+
+
+.popular__data .section__title {
+    text-align: left;
+}
+
+.popular__data .section__description {
+    text-align: left;
+    margin-bottom: 24px;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.popular__list {
+    padding: 10px 20px;
+}
+
+.popular__list li {
+    list-style-type: disc;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+    line-height: 26px;
+}
+
+/* ============================= Destination Section ======================================= */
+.destination__container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.destination__card {
+    display: flex;
+    gap: 24px;
+}
+
+.destination__card-img {
+    position: relative;
+}
+
+.destination__card-img img {
+    border-radius: 16px;
+    background: linear-gradient(0deg, rgba(19, 19, 24, 0.20) 0%, rgba(19, 19, 24, 0.20) 100%), lightgray 50%;
+}
+
+.destination__title {
+    color: var(--body-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-transform: capitalize;
+    transform: translate(-50%, -50%);
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-extra-bold);
+}
+
+/* ============================= Why Choose Section ======================================= */
+.whyChoose__container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.whyChoose__card {
+    display: flex;
+    gap: 24px;
+}
+
+.whyChoose__card2 {
+    margin: 0 auto;
+    width: 573px;
+    height: 284px;
+    flex-shrink: 0;
+}
+
+.whychoose__data {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(251, 181, 99, 0.20);
+    background: rgba(251, 181, 99, 0.05);
+}
+
+.whychoose__data:nth-child(2) {
+    border: 1px solid rgba(41, 206, 246, 0.20);
+    background: rgba(41, 206, 246, 0.05);
+}
+
+.whyChoose__img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 32px;
+}
+
+.whyChoose__title {
+    color: var(--title-color);
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-extra-bold);
+    margin-bottom: 16px;
+}
+
+.whyChoose__descripiton {
+    color: var(--text-color);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+    line-height: 26px;
+}
+
+/* ============================= Pakege Section ========================================== */
+
+
+/* ============================= Newsletter Section ======================================== */
+.newsletter__container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.newsletter__content {
+    flex-basis: 50%;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #FF5400;
+    background-color: var(--body-color);
+}
+
+.newsletter__title {
+    color: var(--title-color);
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-extra-bold);
+    margin-bottom: 16px;
+}
+
+.newsletter__description {
+    color: #5A5A5D;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+    margin-bottom: 24px;
+}
+
+.newsletter__form {
+    border-top: 1px solid rgba(19, 19, 24, 0.10);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.newsletter__form input {
+    padding: 16px;
+    border-radius: 8px;
+    background: rgba(19, 19, 24, 0.05);
+    border: none;
+    outline: none;
+    color: rgba(19, 19, 24, 0.30);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+}
+
+.newsletter__form .subscribe__btn {
+    background-color: var(--primary-color);
+    color: var(--body-color);
+    font-size: 20px;
+    font-weight: var(--font-extra-bold);
+}
+
+.newsletter__img {
+    flex-basis: 60%;
+    position: relative;
+}
+
+.newsletter__discount {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 26px;
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    transform: rotate(-45deg);
+}
+
+.newsletter__link {
+    color: var(--body-color);
+    font-size: 1.5rem;
+    font-weight: var(--font-regular);
+    margin-bottom: 5px;
+}
+
+.newsletter__discount h4 {
+    color: var(--body-color);
+    font-size: 2rem;
+    font-weight: var(--font-extra-bold);
+}
+
+
+/* ============================= Footer Section ========================================= */
+.footer {
+    margin-top: 100px;
+    background: rgba(19, 19, 24, 0.05);
+    text-align: center;
+    padding: 110px 30px;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__content {
+    border-bottom: 1px solid rgba(19, 19, 24, 0.10);
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 36px;
+    font-weight: var(--font-extra-bold);
+    text-transform: uppercase;
+    color: var(--title-color);
+    margin-bottom: 15px;
+}
+
+.footer__logo img {
+    width: 64px;
+    height: 64px;
+}
+
+.footer__logo span {
+    color: var(--primary-color);
+}
+
+.footer__description {
+    width: 769px;
+    color: #5A5A5D;
+    margin: 0 auto 32px;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+    line-height: 26px;
+}
+
+.footer__social {
+    display: inline-flex;
+    gap: 24px;
+}
+
+.footer__links {
+    font-size: 20px;
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+    padding: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50px 100px 150px 200px;
+    transition: background-color 1s ease-in-out;
+}
+
+.footer__links:hover {
+    background-color: var(--primary-color);
+    /* border: transparent; */
+    color: var(--body-color);
+    transition: 1s ease-in-out;
+}
+
+
+.footer__copy {
+    color: #5A5A5D;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+    font-family: 'Inter', sans-serif;
+    line-height: 26px;
+}
+
+
+/* ========================= Media query for Medium Large Device ============================ */
+@media screen and (max-width: 1180px) {
+    .popular__data {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .container {
+        margin-inline: 8rem;
+    }
+
+    .banner__form {
+        width: 750px;
+    }
+
+    .popular__container {
+        align-items: center;
+    }
+
+    .popular__data {
+        flex-basis: 55%;
+    }
+
+    .popular__img {
+        flex-basis: 40%;
+    }
+}
+
+/* ========================= Media query for Medium Device ============================ */
+@media screen and (max-width: 991px) {
+    .container {
+        margin-inline: 3rem;
+    }
+
+    .nav__toggler {
+        display: flex;
+        /* margin-right: 30px; */
+        transition: 1s;
+    }
+
+    .nav__menu {
+        position: absolute;
+        left: -100%;
+        top: 7rem;
+        width: 70%;
+        background-color: #fff;
+        box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding: 30px;
+        transition: 1s;
+        border-radius: 10px;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    #nav-check:checked~.nav__menu {
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 1s;
+    }
+
+    #nav-check:checked~.nav__toggler span {
+        background-color: transparent;
+        /* transition: 10s; */
+    }
+
+    #nav-check:checked~.nav__toggler span::before {
+        top: 0;
+        transform: rotate(45deg);
+        transition: 1s;
+    }
+
+
+    #nav-check:checked~.nav__toggler span::after {
+        top: 0;
+        transform: rotate(-45deg);
+        transition: 1s;
+    }
+
+
+    .banner__form {
+        width: 650px;
+        /* flex-direction: column; */
+    }
+
+    .popular__container {
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .popular__data,
+    .popular__img {
+        flex-basis: 100%;
+    }
+
+    .newsletter__container {
+        flex-direction: column;
+    }
+
+    .newsletter__form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+
+    .footer__description {
+        width: 100%;
+        margin: 0 0 32px;
+    }
+
+
+}
+
+
+/* ========================= Media query for Small Medium Device ============================ */
+@media screen and (max-width: 780px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .section {
+        margin-top: 50px;
+    }
+
+    .section__description {
+        width: 100%;
+    }
+
+    .nav__logo {
+        font-size: 24px;
+    }
+
+    .nav__logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav__list {
+        column-gap: 20px;
+    }
+
+    .banner__description {
+        width: 100%;
+    }
+
+    .banner__form {
+        flex-direction: column;
+        width: 600px;
+    }
+
+    .destination__card {
+        flex-direction: column;
+    }
+
+    .whyChoose__card {
+        flex-direction: column;
+    }
+
+    .whyChoose__card2 {
+        width: 100%;
+        margin: 0;
+    }
+
+    .newsletter__form {
+        display: flex;
+    }
+
+
+    .newsletter__discount {
+        right: 20px;
+        buttom: 20px;
+        
+  
+        
+    }
+
+}
+
+/* ========================= Media query for Smallest Device ============================ */
+@media screen and (max-width: 690px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+
+    .nav__logo {
+        font-size: 28px;
+    }
+
+    .banner__form {
+        flex-direction: column;
+        width: 300px;
+    }
+
+    .newsletter {
+        margin-top: 150px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 430px) {
+    .container {
+        margin-inline: .5rem;
+    }
+
+    .nav__logo {
+        font-size: 22px;
+    }
+
+
+    .nav__logo img {
+    
+        height: 40px;
+    }
+
+    .newsletter__discount {
+        
+        transform:translatex(110px) translatey(42px)rotate(-45deg) scale(0.45);
+       
+    }
+
+    .footer__logo {
+        font-size: 2rem;
+    }
+
+    .footer__logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+}. 
