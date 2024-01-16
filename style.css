@@ -214,7 +214,7 @@ img {
 
 .banner__container {
     border-radius: 16px;
-    background: linear-gradient(180deg, rgba(19, 19, 24, 0.80) 0%, rgba(19, 19, 24, 0.00) 100%), url('../image/bannerBG.png');
+    background-image: linear-gradient(180deg, rgba(19, 19, 24, 0.80) 0%, rgba(19, 19, 24, 0.00) 100%), url('image/bannerBG.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
